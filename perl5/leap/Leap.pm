@@ -6,11 +6,9 @@ use Exporter 'import';
 our @EXPORT_OK = qw(is_leap_year);
 
 sub is_leap_year {
-  my ($year) = @_;
+  my $year = shift;
 
-  return 1 if ($year % 4 == 0) and ( ($year % 100 != 0) or ($year % 400 ==0) );
-
-  return 0;   # Replace this with your own code to pass the tests.
+  return (($year % 4 == 0) and ( ($year % 100 != 0) or ($year % 400 ==0) ));
 }
 
 1;
