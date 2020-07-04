@@ -2,19 +2,18 @@
 
 answer=""
 
-declare -A modules
 
-modules=( ["3"]="Pling" ["5"]="Plang" ["7"]="Plong" )
+modules=(0 1 2 "Pling" 4 "Plang" 6 "Plong")
 
 for m in 3 5 7 
 do 
-    if (( $1 % m == 0 )); then
-        answer="${answer}${modules[$m]}"
+    if (( $1 % $m == 0 )); then
+        answer+=${modules[$m]}
     fi
 done
 
-if [[ $answer == "" ]]; then
-    answer=$1
+if [[ -z $answer ]]; then
+    answer="$1"
 fi
 
-echo $answer
+echo "$answer"
