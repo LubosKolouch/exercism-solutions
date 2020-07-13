@@ -28,10 +28,10 @@ sub proverb() {
     my $output;
 
     for (0..scalar @$input -2) {
-        $output .= "For want of a @$input[$_] the @$input[$_+1] was lost.\n";
+        $output .= "For want of a $input->[$_] the $input->[$_+1] was lost.\n";
     }
 
-    $output .= "And all for the want of a$qualifier @$input[0].";
+    $output .= "And all for the want of a$qualifier $input->[0].";
 
     return $output;
 }
